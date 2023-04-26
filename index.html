@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CreativeCanvas</title>
+    <link rel="stylesheet" href="main.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+      integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer" />
+
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="favicon/apple-touch-icon.png" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="favicon/favicon-32x32.png" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="favicon/favicon-16x16.png" />
+    <link rel="manifest" href="favicon/site.webmanifest" />
+    <link
+      rel="mask-icon"
+      href="favicon/safari-pinned-tab.svg"
+      color="#000000" />
+    <meta name="msapplication-TileColor" content="#000000" />
+    <meta name="theme-color" content="#ffffff" />
+  </head>
+  <body>
+    <div class="loadingScreen">
+      <div class="spin"></div>
+    </div>
+    <div class="starter">
+      <div class="stater-body">
+        <p>Click left mouse button to draw</p>
+        <p>Click right mouse button to delete</p>
+        <p>Scroll over any box to select it color</p>
+        <p>Hold any keyborad key and move over the boxs to draw over them</p>
+        <p>Use the color box to change the drawing color</p>
+        <p>
+          Use the input field to change the boxs size hint: use the same width
+          values for the dimantions input for best results
+        </p>
+        <p>Use the save button to save your image as png file</p>
+        <p>Use the clear button to clear the page</p>
+        <button id="done">Got it</button>
+      </div>
+    </div>
+    <header>
+      <nav>
+        <ul class="nav-bar">
+          <li class="logo">
+            <div class="box-setting">
+              <p>Color</p>
+              <input id="colorChoice" type="color" value="000000" />
+            </div>
+          </li>
+          <input type="checkbox" id="check" />
+          <span class="menu">
+            <li>
+              <div class="box-setting">
+                <p>Height</p>
+                <input id="boxHeight" type="text" placeholder="32" value="" />
+              </div>
+            </li>
+            <li>
+              <div class="box-setting">
+                <p>Width</p>
+                <input id="boxWidth" type="text" placeholder="32" value="" />
+              </div>
+            </li>
+            <li>
+              <div class="box-setting">
+                <p>Dimantions</p>
+                <input
+                  id="boxDimations"
+                  type="text"
+                  placeholder="32"
+                  value="" />
+              </div>
+            </li>
+            <li>
+              <button onclick="updateSize()" class="set">Set</button>
+            </li>
+            <li>
+              <div class="box-setting">
+                <p>Outline</p>
+                <input id="outlineCheck" type="checkbox" checked />
+              </div>
+            </li>
+            <li>
+              <div class="box-setting">
+                <p>Sound</p>
+                <input id="soundCheck" type="checkbox" checked />
+              </div>
+            </li>
+            <li>
+              <button id="clear" class="btn">Clear</button>
+            </li>
+            <li>
+              <button id="save" class="btn" onclick="save()">Save</button>
+            </li>
+            <label for="check" class="close-menu"
+              ><i class="fas fa-times fa-xl"></i
+            ></label>
+          </span>
+          <label for="check" class="open-menu"
+            ><i class="fas fa-bars"></i
+          ></label>
+        </ul>
+      </nav>
+    </header>
+    <main id="capture"></main>
+    <script
+      src="https://kit.fontawesome.com/4f7037161c.js"
+      crossorigin="anonymous"></script>
+    <script src="html2canvas.min.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>
